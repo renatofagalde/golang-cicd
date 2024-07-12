@@ -116,6 +116,17 @@ jobs:
         with:
           use-installer: true
 
+      - name: Setup GOLang
+        uses: actions/setup-go@v3
+        with:
+          go-version: '1.22.3'
+
+      - name: Build
+        run: |
+         cd hello-world
+         GOOS=linux GOARCH=amd64 go build -o bootstrap main.go
+         cd ..
+        
       - name: Build resources
         run: sam build --template ${SAM_TEMPLATE} --use-container
 
