@@ -200,6 +200,17 @@ jobs:
           role-duration-seconds: 3600
           role-skip-session-tagging: true
 
+      - name: Setup GOLang
+        uses: actions/setup-go@v3
+        with:
+          go-version: '1.22.3'
+
+      - name: Build
+        run: |
+         cd hello-world
+         GOOS=linux GOARCH=amd64 go build -o bootstrap main.go
+         cd ..
+ 
       - name: Deploy to testing account
         run: |
           sam deploy --stack-name ${TESTING_STACK_NAME} \
