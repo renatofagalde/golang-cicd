@@ -124,7 +124,7 @@ jobs:
 
       - name: Build
         run: |
-         cd hello-world
+         cd src
          GOOS=linux GOARCH=amd64 go build -o bootstrap main.go
          cd ..
         
@@ -208,7 +208,7 @@ jobs:
 
       - name: Build
         run: |
-         cd hello-world
+         cd src
          GOOS=linux GOARCH=amd64 go build -o bootstrap main.go
          cd ..
  
