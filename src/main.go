@@ -11,7 +11,7 @@ func handler(request events.APIGatewayProxyRequest) (events.APIGatewayProxyRespo
 	var greeting string
 	sourceIP := request.RequestContext.Identity.SourceIP
 
-	fmt.Println("app 03")
+	fmt.Println("app 04")
 
 	if sourceIP == "" {
 		greeting = "Hello, Dan"
